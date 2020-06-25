@@ -19,7 +19,7 @@ model.add(Conv2D(3, (5, 5), activation='relu', padding='same'))
 
 model.summary()
 
-model.compile(optimizer='adam', loss='binary_crossentropy')
+model.compile(optimizer='adadelta', loss='binary_crossentropy')
 
 EPOCHS = 100
 BATCH_SIZE = 2
