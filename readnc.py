@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import netCDF4
-import time
+from os import path
 from glob import glob
 
 fig = plt.figure()
@@ -14,3 +14,4 @@ for files in glob("./data/nc/*.nc"):
     ax.imshow(image)
     plt.draw()
     plt.pause(0.02)
+    plt.imsave("./data/jpg" + path.basename(files)[:-2] + ".jpg", image)
