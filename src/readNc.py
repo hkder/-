@@ -39,11 +39,14 @@ def extractPNG(num):
         # examine the variables
         # print(nc.variables.keys())
         # print(nc.variables['image_pixel_values'])
-        topo = nc.variables['image_pixel_values'][::10,::10]
+        print(nc.variables['image_pixel_values'].shape)
+        topo = nc.variables['image_pixel_values'][::6,::6]
 
         # make image
-        plt.figure(figsize=(10,10))
+        plt.figure(figsize=(40,40)) #figsize=(180,180)
         plt.imshow(topo,origin='lower')
+        plt.savefig('image.png', bbox_inches=0, dpi=200)
+        # save image
         plt.savefig('../data/png/'+filename+n+'.png', bbox_inches=0)
 
 extractPNG(28)
