@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import netCDF4
-import sys
+import time
 from glob import glob
 
 fig = plt.figure()
@@ -13,5 +13,4 @@ for files in glob("./data/nc/*.nc"):
     image = nc.variables['image_pixel_values']
     ax.imshow(image)
     plt.draw()
-    if input() == 'q':
-        break
+    plt.pause(0.02)
