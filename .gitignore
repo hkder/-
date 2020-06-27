@@ -1,2 +1,7 @@
+
+#PyCharm
 .idea/*
 .idea/
+
+#Npy Data
+*.npy
