@@ -3,8 +3,8 @@ from keras.models import load_model
 import numpy as np
 
 
-model = load_model('weights-relu.h5')
-original = np.load('./train_label.npy')
+model = load_model('adadelta-binary.h5')
+original = np.load('./test_label.npy')
 
 seed = list(original[:3])
 train_set = original[3:]

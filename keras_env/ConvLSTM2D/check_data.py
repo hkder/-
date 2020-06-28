@@ -8,9 +8,9 @@ test_set, test_label = (
 
 for data, label in zip(train_set, train_label):
     for image in data:
-        cv2.imshow('data', image)
+        cv2.imshow('data', cv2.cvtColor(image.astype('float32'), cv2.COLOR_RGB2BGR))
         cv2.waitKey(50)
     cv2.waitKey()
-    cv2.imshow('data', label)
+    cv2.imshow('data', cv2.cvtColor(label.astype('float32'), cv2.COLOR_RGB2BGR))
     if cv2.waitKey() & 0xFF == ord('q'):
         break

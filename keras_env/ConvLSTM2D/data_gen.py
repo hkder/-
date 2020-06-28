@@ -12,7 +12,8 @@ DEPTH = 3
 buffer = []
 
 for i, file in enumerate(glob('../../data/GK2A/Train/*.png')):
-    image = cv2.imread(file) / 255
+    image = cv2.imread(file)
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) / 255
     if i < DEPTH:
         buffer.append(image.copy())
     else:
@@ -26,7 +27,8 @@ print(np.array(train_label).shape, np.array(train_set).shape)
 buffer = []
 
 for i, file in enumerate(glob('../../data/GK2A/Test/*.png')):
-    image = cv2.imread(file) / 255
+    image = cv2.imread(file)
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) / 255
     if i < DEPTH:
         buffer.append(image.copy())
     else:
