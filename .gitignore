@@ -5,3 +5,6 @@
 
 #Npy Data
 *.npy
+
+# models
+*.h5
